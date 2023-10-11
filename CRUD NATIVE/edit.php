@@ -20,7 +20,7 @@
             }
             ?>
             <div>
-                <input type="hidden" value="<?php echo $id?>">
+                <input type="hidden" name="id" value="<?php echo $id?>">
             </div>
             <div>
                 <label>Nama</label>
@@ -33,6 +33,9 @@
             <div>
                 <label>No Hape</label>
                 <input type="number" name="no_hape" value="<?php echo $no_hape?>">
+            </div>
+            <div>
+                <input type="submit" value="Edit">
             </div>
         </form>
     </body>
