@@ -25,8 +25,8 @@
             echo "<td>" . $data['nama'] . "</td>";
             echo "<td>" . $data['email'] . "</td>";
             echo "<td>" . $data['no_hape'] . "</td>";
-            echo "<td>" . "<a href=''>edit</a>" . "</td>";
-            echo "<td>" . "<a href=''>hapus</a>" . "</td>";
+            echo "<td>" . "<a href='edit.php?id=$data[id]'>edit</a>" . "</td>";
+            echo "<td>" . "<a href='delete.php?id=$data[id]'>hapus</a>" . "</td>";
             echo "</tr>";
         }
         ?>
