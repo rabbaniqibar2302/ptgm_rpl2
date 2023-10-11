@@ -15,11 +15,19 @@ $add = mysqli_query($host,"insert into user values
 '$no_hape')");
 
 // notifikasi
+// yang dimaksud hanya menulis variabel adalah true
 if($add){
     echo"
     <script>
     alert('Data Berhasil Di Tambahkan');
     window.location.href = 'index.php';
+    </script>
+    ";
+}else{
+    echo"
+    <script>
+    alert('Data Tidak Berhasil Di Tambahkan');
+    window.location.href = 'add.php';
     </script>
     ";
 }
