@@ -21,5 +21,12 @@ class db{
         return $hasil;
     }
 
+    function add_data($nama,$alamat,$usia){
+        mysqli_query($this->config,"insert into user values
+        (null,
+        '$nama',
+        '$alamat',
+        '$usia')");
+    }
+
 }
-?>

@@ -5,8 +5,16 @@ $db = new db(); //instansiasi
 
 $aksi = $_GET['aksi'];
 if ($aksi == "tambah"){
-    $db->add_data();
-    header("Location:index.php");
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $usia = $_POST['usia'];
+    $db->add_data($nama,$alamat,$usia);
+    echo "
+    <script>
+    alert('Data Berhasil Di Tambah!');
+    window.location.href='index.php';
+    </script>
+    ";
 }
 
 ?>

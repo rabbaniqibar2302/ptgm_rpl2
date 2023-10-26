@@ -5,7 +5,7 @@
     <body>
         <h2>Tambah Data</h2>
         <a href="index.php">back</a>
-        <form action="proses.php" method="post">
+        <form action="proses.php?aksi=tambah" method="post">
             <div>
                 <label>Nama</label>
                 <input type="text" name="nama">
