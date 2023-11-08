@@ -2,7 +2,7 @@
 include 'config.php';
 
 // ambil variabel
-$nama = $_POST['username'];
+$name = $_POST['username'];
 $pass = $_POST['password'];
 $role = $_POST['role'];
 
@@ -10,6 +10,49 @@ $role = $_POST['role'];
 // masukan ke table user dan table detail_dokter
 // di dalam table user (null, $name, $pass, $role)
 // di dalam table detail_dokter (null, 1, $name, spesialis)
+if($role == "dokter"){
+    $data = mysqli_query($host,"insert into user values(
+        null,'$name','$pass','$role')");
+    $data .= mysqli_query($host,"insert into detail_dokter values(
+        null, 1, '$name', 'spesialis')");
+    if($data){
+        echo "
+        <script>
+        alert('Data Akun Dokter Berhasil Di Tambah');
+        window.location.href='index.php';
+        </script>
+        ";
+    }else{
+        echo "
+        <script>
+        alert('Data Akun Dokter Gagal Di Tambah');
+        // window.location.href='regis.php';
+        </script>
+        ";
+    }
+}else if($roll = "pasien"){
+    $data = mysqli_query($host,"insert into user values(
+        null, '$name', '$pass', '$role'
+    )");
+    $data .= mysqli_query($host,"insert into detail_pasien values(
+        null, 1, '$name', 'penyakit'
+    )");
+    if($data){
+        echo "
+        <script>
+        alert('Data Akun Pasien Berhasil Di Tambah');
+        window.location.href='index.php';
+        </script>
+        ";
+    }else{
+        echo "
+        <script>
+        alert('Data Akun Pasien Gagal Di Tambah');
+        window.location.href='regis.php';
+        </script>
+        ";
+    }
+}
 
 // jika role = pasien maka
 // masukan ke table user dan table detail_pasien
