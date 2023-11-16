@@ -6,6 +6,8 @@
     <title>Login Page</title>
 </head>
 <body>
+    <h1>Login Aplikasi Rekam Medis</h1>
+    <h3>Silahkan Masukan Akun kamu!</h3>
     <form action="proses_login.php" method="post">
         <div>
             <label>Username</label>
