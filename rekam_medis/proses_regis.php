@@ -11,11 +11,17 @@ $role = $_POST['role'];
 // di dalam table user (null, $name, $pass, $role)
 // di dalam table detail_dokter (null, 1, $name, spesialis)
 if($role == "dokter"){
-    $data = mysqli_query($host,"insert into user values(
+    $data_1 = mysqli_query($host,"insert into user values(
         null,'$name','$pass','$role')");
-    $data .= mysqli_query($host,"insert into detail_dokter values(
-        null, 1, '$name', 'spesialis')");
-    if($data){
+
+        // cari id user 
+        if($data_1){
+            $last = mysqli_insert_id($host);
+        }
+
+    $data_2 = mysqli_query($host,"insert into detail_dokter values(
+        null, '$last', '$name', 'spesialis')");
+    if($data_1 AND $data_2){
         echo "
         <script>
         alert('Data Akun Dokter Berhasil Di Tambah');
@@ -31,13 +37,20 @@ if($role == "dokter"){
         ";
     }
 }else if($roll = "pasien"){
-    $data = mysqli_query($host,"insert into user values(
+    $data_1 = mysqli_query($host,"insert into user values(
         null, '$name', '$pass', '$role'
     )");
-    $data .= mysqli_query($host,"insert into detail_pasien values(
-        null, 1, '$name', 'penyakit'
+
+    // cari id user 
+    if($data_1){
+        $last = mysqli_insert_id($host);
+    }
+    // cari id user 
+
+    $data_2 = mysqli_query($host,"insert into detail_pasien values(
+        null, '$last', '$name', 'penyakit'
     )");
-    if($data){
+    if($data_1 AND $data_2){
         echo "
         <script>
         alert('Data Akun Pasien Berhasil Di Tambah');

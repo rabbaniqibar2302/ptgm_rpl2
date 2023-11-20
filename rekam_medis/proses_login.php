@@ -34,6 +34,13 @@ if($user == "dokter"){
     window.location.href = 'pasien/index.php';
     </script>
     ";
+}else{
+    echo"
+    <script>
+    alert('AKUN NE PIYE!')
+    window.location.href = 'index.php';
+    </script>
+    ";
 }
 
 ?>
