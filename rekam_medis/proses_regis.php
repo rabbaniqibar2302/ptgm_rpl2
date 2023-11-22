@@ -21,7 +21,7 @@ if ($role == "dokter") {
 
     $data_2 = mysqli_query($host, "insert into detail_dokter values(
         null, '$last', '$name', 'spesialis')");
-    if ($data_1 and $data_2) {
+    if ($data_1 AND $data_2) {
         echo "
         <script>
         alert('Data Akun Dokter Berhasil Di Tambah');
@@ -50,7 +50,7 @@ if ($role == "dokter") {
     $data_2 = mysqli_query($host, "insert into detail_pasien values(
         null, '$last', '$name', 'penyakit'
     )");
-    if ($data_1 and $data_2) {
+    if ($data_1 AND $data_2) {
         echo "
         <script>
         alert('Data Akun Pasien Berhasil Di Tambah');
